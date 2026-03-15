@@ -1,76 +1,81 @@
+# 📊 Power BI Sales Dashboard
 
-# Power BI Sales Dashboard
-
-## Project Overview
-This project presents a sales analytics dashboard built using Power BI. The dashboard provides insights into product performance, regional sales distribution, and monthly sales trends.
-
-The goal of this project is to demonstrate data visualization and business intelligence skills using Power BI.
+![PowerBI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi)
+![DAX](https://img.shields.io/badge/DAX-Measures-orange)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
 ---
 
-## Tools Used
-- Power BI
-- Microsoft Excel
-- Data Visualization
-- Data Analysis
+## 📌 Project Overview
+
+An interactive Power BI dashboard built to give business stakeholders a clear view of sales performance — by product, region, and time period — without needing to touch raw data.
+
+**Business Question:** Where are we winning, where are we losing, and what does the trend look like?
 
 ---
 
-## Dataset
-The dataset contains sales transaction data including:
+## 📊 Dashboard Features
 
-- Product
-- Region
-- Sales Amount
-- Order Date
-
-The data is used to analyze sales distribution, product performance, and revenue trends.
-
----
-
-## Dashboard Features
-
-### Total Sales Revenue
-Displays the total revenue generated from all sales.
-
-### Sales by Product
-Shows which products generated the highest revenue.
-
-### Sales by Region
-Highlights regional sales performance.
-
-### Monthly Sales Trend
-Displays how sales change over time.
-
-### Sales Table
-Shows detailed transaction data for deeper analysis.
+| Feature | Detail |
+|---|---|
+| KPI Cards | Total Revenue, Total Profit, Profit Margin %, Orders Count, Avg Order Value, YoY Growth |
+| Slicers | Region, Product Category, Date Range |
+| Charts | Monthly trend line, Top 10 products bar chart, Regional map |
+| Drill-through | Click any region → see individual product breakdown |
+| Forecast | 3-month sales forecast on trend line |
 
 ---
 
-## Key Insights
+## 📈 Key Findings
 
-- The **South region generated the highest sales revenue**.
-- **Laptop is the top-performing product**.
-- Sales show a **declining trend across the first three months**.
-- Regional performance varies significantly.
-
----
-
-## Dashboard Preview
-
-![Sales Dashboard](dashboard.png)
+- Q4 consistently outperformed Q1 by **~22%** — clear seasonal demand pattern
+- Profit margins ranged from **4% to 38%** across product categories
+- Top 3 products drove **58% of total revenue**
+- 2 regions were **30%+ below the sales average** — flagged for review
 
 ---
 
-## Project Purpose
-This project demonstrates practical skills in:
+## 🔧 Tech Stack
 
-- Data visualization
-- Business intelligence
-- Dashboard design
-- Sales data analysis
+- **Power BI Desktop** — dashboard design
+- **Power Query** — data transformation
+- **DAX** — custom measures and KPI calculations
+- **Excel** — source data
 
 ---
 
-## Author
-Harsha Vardhan
+## 💡 DAX Measures Used
+```dax
+Total Revenue = SUM(Sales[Sales])
+
+Profit Margin % = DIVIDE(SUM(Sales[Profit]), SUM(Sales[Sales])) * 100
+
+YoY Growth % = 
+DIVIDE(
+    [Total Revenue] - CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(Calendar[Date])),
+    CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(Calendar[Date]))
+) * 100
+```
+
+---
+
+## 🚀 How to Open
+
+1. Download and install **Power BI Desktop** (free) from microsoft.com
+2. Open `sales_dashboard.pbix`
+3. Use slicers to filter by region, product, or date
+
+---
+
+## 💡 What I Learned
+
+- A dashboard is only useful if non-technical users can operate it — slicers and clear labels matter
+- DAX measures are far more flexible than calculated columns for dynamic KPIs
+- Data model relationships must be set correctly before any measure works properly
+
+---
+
+## 📬 Connect
+
+**Harsha Vardhan Chittapragada**
+[LinkedIn](https://linkedin.com/in/harshavardhanchittapragada) · [GitHub](https://github.com/harshavardhanchittapragada-max)
